@@ -22,18 +22,11 @@ export const CoverageTable = ({ coverage }: CoverageTableProps) => (
 		<Box as="thead">
 			<Box as="tr">
 				<Box sx={{ width: '100%' }} as="td"></Box>
-				<Box sx={{ textAlign: 'right' }} as="td">
-					Lines
-				</Box>
-				<Box sx={{ textAlign: 'right' }} as="td">
-					Statements
-				</Box>
-				<Box sx={{ textAlign: 'right' }} as="td">
-					Branches
-				</Box>
-				<Box sx={{ textAlign: 'right' }} as="td">
-					Functions
-				</Box>
+				{coverage.summaryTitles.map((title, index) => (
+					<Box sx={{ textAlign: 'right' }} key={index} as="td">
+						{title}
+					</Box>
+				))}
 			</Box>
 		</Box>
 		<Box as="tbody">
@@ -46,10 +39,9 @@ export const CoverageTable = ({ coverage }: CoverageTableProps) => (
 				<Box paddingLeft={5} fontWeight="bold" as="td">
 					Total
 				</Box>
-				<PercentCell percent={coverage.summary.lines.pct} />
-				<PercentCell percent={coverage.summary.statements.pct} />
-				<PercentCell percent={coverage.summary.branches.pct} />
-				<PercentCell percent={coverage.summary.functions.pct} />
+				{coverage.summaryStats.map((percent, index) => (
+					<PercentCell percent={percent} key={index} />
+				))}
 			</Box>
 		</Box>
 	</Box>

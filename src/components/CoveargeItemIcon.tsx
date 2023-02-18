@@ -1,20 +1,21 @@
 import { FileIcon, FileDirectoryIcon, FileDirectoryOpenFillIcon, FileDirectoryFillIcon } from '@primer/styled-octicons';
-import { ParsedCoverage } from '../utils/ParsedCoverage';
+import { ParsedCoverageChild } from '../utils/ParsedCoverage';
 
-export type CoverageItemIconProps = ParsedCoverage & {
+export type CoverageItemIconProps = Pick<ParsedCoverageChild, 'type'> & {
 	expanded?: boolean;
+	isEmpty?: boolean;
 };
 
-export const CoverageItemIcon = (coverage: CoverageItemIconProps) => {
-	if (coverage.type === 'file') {
+export const CoverageItemIcon = ({ type, isEmpty, expanded }: CoverageItemIconProps) => {
+	if (type === 'file') {
 		return <FileIcon />;
 	}
 
-	if (coverage.children.length === 0) {
+	if (isEmpty) {
 		return <FileDirectoryIcon />;
 	}
 
-	if (coverage.expanded) {
+	if (expanded) {
 		return <FileDirectoryOpenFillIcon color="treeViewItem.directory.fill" />;
 	}
 

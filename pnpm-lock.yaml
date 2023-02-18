@@ -8,12 +8,14 @@ specifiers:
   '@primer/styled-octicons': ^17.12.0
   '@sirse-dev/eslint-config': ^2.2.0
   '@types/istanbul-lib-coverage': ^2.0.4
+  '@types/lcov-parse': ^1.0.0
   '@types/node': ^18.13.0
   '@types/react': ^18.0.28
   '@types/react-dom': ^18.0.11
   '@vitejs/plugin-react': ^3.1.0
   eslint: ^8.34.0
   istanbul-lib-coverage: ^3.2.0
+  lcov-parse: ^1.0.0
   prettier: ^2.8.4
   react: ^18.1.0
   react-dom: ^18.1.0
@@ -27,6 +29,7 @@ dependencies:
   '@primer/react': 35.19.0_2zpt4ilzykmne4yndyzrqd4gdm
   '@primer/styled-octicons': 17.12.0_56nicwxcbpehznvjhlpvpy75bu
   istanbul-lib-coverage: 3.2.0
+  lcov-parse: 1.0.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   styled-components: 5.3.6_biqbaboplfbrettd7655fr4n2y
@@ -36,6 +39,7 @@ devDependencies:
   '@covbot/vite-plugin-github-block': 0.1.0_s5b7qosrcleyqxv3jh6xxrpqsu
   '@sirse-dev/eslint-config': 2.2.0_ztlnmuobvwn63gpuifwwrjpt4i
   '@types/istanbul-lib-coverage': 2.0.4
+  '@types/lcov-parse': 1.0.0
   '@types/node': 18.13.0
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
@@ -906,6 +910,10 @@ packages:
 
   /@types/json5/0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
+    dev: true
+
+  /@types/lcov-parse/1.0.0:
+    resolution: {integrity: sha512-OUhELB4cGtoAkBPr2/9zOe05f+Qijf7nUgx7MgPr/BNY272fiv7qWfrd02zPKb2n3xiWzYtZRXQnx0QWRxENVQ==}
     dev: true
 
   /@types/node/18.13.0:
@@ -2846,6 +2854,11 @@ packages:
       array-includes: 3.1.6
       object.assign: 4.1.4
     dev: true
+
+  /lcov-parse/1.0.0:
+    resolution: {integrity: sha512-aprLII/vPzuQvYZnDRU78Fns9I2Ag3gi4Ipga/hxnVMCZC8DnR2nI7XBqrPoywGfxqIx/DgarGvDJZAD3YBTgQ==}
+    hasBin: true
+    dev: false
 
   /levn/0.4.1:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}

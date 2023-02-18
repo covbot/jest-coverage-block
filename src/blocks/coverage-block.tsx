@@ -2,14 +2,32 @@ import { createBlock } from '@covbot/vite-plugin-github-block/client';
 import { react, useBlockContext } from '@covbot/vite-plugin-github-block/react';
 import { FileBlockProps } from '@githubnext/blocks';
 import { ThemeProvider, BaseStyles } from '@primer/react';
-import { useMemo } from 'react';
+import { useEffect, useState } from 'react';
 import { CoverageTable } from '../components/CoverageTable';
 import { getParsedCoverage } from '../utils/getParsedCoverage';
+import { ParsedCoverage } from '../utils/ParsedCoverage';
 
 const CoverageBlock = () => {
-	const { context, content, metadata, onUpdateMetadata } = useBlockContext() as FileBlockProps;
+	const { context, content } = useBlockContext() as FileBlockProps;
 
-	const parsedCoverage = useMemo(() => getParsedCoverage(content, context.path), [content, context.path]);
+	const [parsedCoverage, setParsedCoverage] = useState<ParsedCoverage | undefined>();
+
+	useEffect(() => {
+		let stillFetching = true;
+
+		const fetchData = async () => {
+			const output = await getParsedCoverage(content, context.path);
+			if (stillFetching) {
+				setParsedCoverage(output);
+			}
+		};
+
+		fetchData();
+
+		return () => {
+			stillFetching = false;
+		};
+	}, [content, context.path]);
 
 	if (!parsedCoverage) {
 		return <div>This file is not supported</div>;

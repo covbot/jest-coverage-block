@@ -14,6 +14,7 @@
 		"@primer/react": "^35.19.0",
 		"@primer/styled-octicons": "^17.12.0",
 		"istanbul-lib-coverage": "^3.2.0",
+		"lcov-parse": "^1.0.0",
 		"react": "^18.1.0",
 		"react-dom": "^18.1.0",
 		"styled-components": "^5.3.6"
@@ -23,6 +24,7 @@
 		"@covbot/vite-plugin-github-block": "^0.1.0",
 		"@sirse-dev/eslint-config": "^2.2.0",
 		"@types/istanbul-lib-coverage": "^2.0.4",
+		"@types/lcov-parse": "^1.0.0",
 		"@types/node": "^18.13.0",
 		"@types/react": "^18.0.28",
 		"@types/react-dom": "^18.0.11",

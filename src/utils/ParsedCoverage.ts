@@ -1,8 +1,12 @@
-import { CoverageSummary } from 'istanbul-lib-coverage';
+export type ParsedCoverageChild = {
+	path: string;
+	children: ParsedCoverageChild[];
+	summaryStats: number[];
+	type: 'file' | 'directory';
+};
 
 export type ParsedCoverage = {
-	path: string;
-	children: ParsedCoverage[];
-	summary: CoverageSummary;
-	type: 'file' | 'directory';
+	children: ParsedCoverageChild[];
+	summaryStats: number[];
+	summaryTitles: string[];
 };

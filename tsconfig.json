@@ -1,4 +1,8 @@
 {
-  "extends": "./node_modules/@githubnext/blocks/tsconfig.json",
-  "include": ["./blocks"]
+	"extends": "./node_modules/@githubnext/blocks/tsconfig.json",
+	"compilerOptions": {
+		"moduleResolution": "node16"
+	},
+	"include": ["./src", "blocks.entry.ts"],
+	"references": [{ "path": "./tsconfig.node.json" }]
 }

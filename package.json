@@ -1,15 +1,36 @@
 {
-  "name": "custom-block-template",
-  "version": "0.0.0",
-  "license": "MIT",
-  "scripts": {
-    "start": "blocks start",
-    "start-https": "blocks start --https=true",
-    "build": "blocks build"
-  },
-  "dependencies": {
-    "@githubnext/blocks": "^2.3.5",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0"
-  }
+	"name": "custom-block-template",
+	"version": "0.0.0",
+	"license": "MIT",
+	"scripts": {
+		"build": "vite build",
+		"dev": "vite",
+		"format": "pnpm format:manifest && pnpm format:code",
+		"format:code": "prettier --write **/*.{js,cjs,mjs,ts,tsx,json,yaml,md}",
+		"format:manifest": "syncpack format"
+	},
+	"dependencies": {
+		"@githubnext/blocks": "^2.3.5",
+		"@primer/react": "^35.19.0",
+		"@primer/styled-octicons": "^17.12.0",
+		"istanbul-lib-coverage": "^3.2.0",
+		"react": "^18.1.0",
+		"react-dom": "^18.1.0",
+		"styled-components": "^5.3.6"
+	},
+	"devDependencies": {
+		"@covbot/configs": "github:covbot/configs",
+		"@covbot/vite-plugin-github-block": "^0.1.0",
+		"@sirse-dev/eslint-config": "^2.2.0",
+		"@types/istanbul-lib-coverage": "^2.0.4",
+		"@types/node": "^18.13.0",
+		"@types/react": "^18.0.28",
+		"@types/react-dom": "^18.0.11",
+		"@vitejs/plugin-react": "^3.1.0",
+		"eslint": "^8.34.0",
+		"prettier": "^2.8.4",
+		"syncpack": "^9.3.2",
+		"typescript": "^4.9.5",
+		"vite": "^4.1.2"
+	}
 }
